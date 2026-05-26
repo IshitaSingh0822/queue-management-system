@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getQueues, createQueue, deleteQueue, updateQueue } from '../api';
 import { useSocket } from '../context/SocketContext';
 import { useToast } from '../context/ToastContext';
