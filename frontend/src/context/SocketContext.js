@@ -10,8 +10,7 @@ export const SocketProvider = ({ children }) => {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
-    const s = io('http://localhost:5001', { transports: ['websocket', 'polling'] });
-
+    const s = io(process.env.REACT_APP_API_URL || 'http://localhost:5001', { transports: ['websocket', 'polling'] });
     s.on('connect', () => {
       setConnected(true);
       console.log('Socket connected');
