@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3001',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE']
   }
 });
@@ -46,7 +46,7 @@ io.on('connection', (socket) => {
 });
 
 // Connect to MongoDB
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/queue_management';
+const MONGODB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/queue_management';
 
 mongoose
   .connect(MONGODB_URI)
