@@ -16,7 +16,7 @@ const io = new Server(server, {
 });
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3001' }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Attach io to every request
