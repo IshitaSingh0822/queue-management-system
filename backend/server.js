@@ -62,4 +62,4 @@ mongoose
     process.exit(1);
   });
 
-module.exports = { app, io };
+module.exports = app;
